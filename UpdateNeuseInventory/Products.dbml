@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nssnc" Class="ProductsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JOSEPH\SQLEXPRESS;Initial Catalog=nssnc;Integrated Security=True" SettingsObjectName="UpdateNeuseInventory.Properties.Settings" SettingsPropertyName="nssncConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.products" Member="products">
+    <Type Name="product">
+      <Column Name="pID" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pName2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pName3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pSection" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pDropship" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pDescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pDescription2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pDescription3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pLongdescription" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pLongdescription2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pLongdescription3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pDownload" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pListPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pWholesalePrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pShipping" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pShipping2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pWeight" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pTax" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="pDisplay" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="pSell" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="pStaticPage" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pStockByOpts" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pRecommend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pGiftWrap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pBackOrder" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pManufacturer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pExemptions" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="pDims" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pSKU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pMetaDesc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pDateAdded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pTotRating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pNumRatings" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pSearchParams" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pCustom1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pCustom2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pCustom3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pStaticURL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pInStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

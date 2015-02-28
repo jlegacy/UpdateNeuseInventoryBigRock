@@ -1,0 +1,13 @@
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\UpdateNeuseInventory.exe
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\UpdateNeuseInventory.pdb
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\obj\Debug\UpdateNeuseInventory.csprojResolveAssemblyReference.cache
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\obj\Debug\UpdateNeuseInventory.exe
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\obj\Debug\UpdateNeuseInventory.pdb
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\Newtonsoft.Json.dll
+c:\users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\SharpCompress.dll
+C:\Users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\UpdateNeuseInventory.exe.config
+C:\Users\jlegacy\documents\visual studio 2013\Projects\UpdateNeuseInventory\UpdateNeuseInventory\bin\Debug\LINQtoCSV.dll
+C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\bin\Debug\UpdateNeuseInventory.exe.config
+C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\obj\Debug\UpdateNeuseInventory.exe
+C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\obj\Debug\UpdateNeuseInventory.pdb

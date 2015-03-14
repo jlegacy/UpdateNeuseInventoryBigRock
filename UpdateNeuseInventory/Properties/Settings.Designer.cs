@@ -26,8 +26,7 @@ namespace UpdateNeuseInventory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql-shark.cybersharks.net;Initial Catalog=nssnc;User ID=jlegacy;Passw" +
-            "ord=shark#1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JOSEPH\\SQLEXPRESS;Initial Catalog=nssnc;Integrated Security=True")]
         public string nssncConnectionString {
             get {
                 return ((string)(this["nssncConnectionString"]));

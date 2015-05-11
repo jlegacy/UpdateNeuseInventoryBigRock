@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Mime;
 using LINQtoCSV;
 using Newtonsoft.Json;
 using SharpCompress.Archive;
@@ -15,13 +17,33 @@ namespace UpdateNeuseInventory
     {
         private static void Main(string[] args)
         {
+
+            if (Settings.Default.runBigRock.CompareTo('Y') == 0)
+            {
+                UpdateBigRock();
+            }
+            if (Settings.Default.runARS.CompareTo('Y') == 0)
+            {
+                CallARS();
+            }
+            Environment.Exit(0);
+        }
+
+
+        private static void CallARS()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName =  Settings.Default.dir + "UpdateNeuseInventory.exe";
+            Process.Start(startInfo);
+        }
+        private static void UpdateBigRock()
+        {
             bool haveFile = false;
 
             // Data Source=sql-shark.cybersharks.net;Initial Catalog=nssnc;User ID=jlegacy;Password=***********
             // Data Source=JOSEPH\SQLEXPRESS;Initial Catalog=nssnc;Integrated Security=True
 
-            string url =
-                "https://retriever.bigrocksports.com/imagelib/getimages.php?User=h03110ds&Pwd=20152015&Action=getqty";
+            string url = Settings.Default.url;
             WebRequest request = WebRequest.Create(url);
             request.ContentType = "application/json; charset=utf-8";
             string text;
@@ -43,8 +65,6 @@ namespace UpdateNeuseInventory
                     ReadCsv();
                 }
             }
-
-            Environment.Exit(0);
         }
 
         public static void ReadCsv()
@@ -56,61 +76,80 @@ namespace UpdateNeuseInventory
             var inputFileDescription = new CsvFileDescription
             {
                 SeparatorChar = ',',
-                FirstLineHasColumnNames = true
+                FirstLineHasColumnNames = true,
+                MaximumNbrExceptions = -1
             };
 
             var cc = new CsvContext();
 
-            IEnumerable<SectionCsv> sections =
-                cc.Read<SectionCsv>(Settings.Default.tempFileName, inputFileDescription);
-
-            IEnumerable<SectionCsv> sectionsByName =
-                from p in sections
-                select p;
-
-            foreach (SectionCsv item in sectionsByName)
+            try
             {
-                count2++;
+                IEnumerable<SectionCsv> sections =
+               cc.Read<SectionCsv>(Settings.Default.tempFileName, inputFileDescription);
 
-                Console.SetCursorPosition(0, 4); //move cursor
-                Console.Write("CSV Item: " + count2 + " " + item.item);
+                IEnumerable<SectionCsv> sectionsByName =
+                    from p in sections
+                    where p.breakPack.Equals("yes") || p.breakPack.Equals("no")
+                    select p;
 
-                try
+                foreach (SectionCsv item in sectionsByName)
                 {
-                    double notUsed = Convert.ToDouble(item.upc);
-                }
-                catch (Exception)
-                {
-                    continue;
-                }
 
-                LeadingZeroItem = Convert.ToString(item.upc);
+                    count2++;
 
-                double temp = Convert.ToDouble(item.upc);
-                String NonLeadingZeroItem = Convert.ToString(temp);
+                    Console.SetCursorPosition(0, 4); //move cursor
+                    Console.Write("CSV Item: " + count2 + " " + item.item);
 
-                var cs = new ProductsDataContext();
-                IQueryable<product> q =
-                    from a in cs.GetTable<product>()
-                    where a.pID.Equals(LeadingZeroItem) || a.pID.Equals(NonLeadingZeroItem)
-                    select a;
-
-                foreach (product a in q)
-                {
-                    buildData(a, item);
                     try
                     {
-                        cs.SubmitChanges();
-                        count = count + 1;
-                        Console.SetCursorPosition(0, 0); //move cursor
-                        Console.Write("Update Record: " + count);
+                        double notUsed = Convert.ToDouble(item.upc);
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
-                        Console.Write(e.ToString());
+                        continue;
+                    }
+
+                    LeadingZeroItem = Convert.ToString(item.upc);
+
+                    double temp = Convert.ToDouble(item.upc);
+                    String NonLeadingZeroItem = Convert.ToString(temp);
+
+                    var cs = new ProductsDataContext();
+                    IQueryable<product> q =
+                        from a in cs.GetTable<product>()
+                        where a.pID.Equals(LeadingZeroItem) || a.pID.Equals(NonLeadingZeroItem)
+                        select a;
+
+                    foreach (product a in q)
+                    {
+                        buildData(a, item);
+                        try
+                        {
+                            cs.SubmitChanges();
+                            count = count + 1;
+                            Console.SetCursorPosition(0, 0); //move cursor
+                            Console.Write("Update Record: " + count);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.Write(e.ToString());
+                        }
                     }
                 }
+
             }
+            catch (AggregatedException ae)
+            {
+                // Process all exceptions generated while processing the file
+                List<Exception> innerExceptionsList =
+                    (List<Exception>)ae.Data["InnerExceptionsList"];
+                foreach (Exception e in innerExceptionsList)
+                {
+                    Console.Write(e.Message);
+                }
+            }
+
+           
         }
 
         private static void buildData(product myProduct, SectionCsv item)

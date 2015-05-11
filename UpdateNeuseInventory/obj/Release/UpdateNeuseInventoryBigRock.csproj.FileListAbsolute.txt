@@ -5,6 +5,5 @@ C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRo
 C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\bin\Release\Newtonsoft.Json.dll
 C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\bin\Release\SharpCompress.dll
 C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\bin\Release\Newtonsoft.Json.xml
-C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\obj\Release\UpdateNeuseInventoryBigRock.csprojResolveAssemblyReference.cache
 C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\obj\Release\UpdateNeuseInventory.exe
 C:\Users\jlegacy\Documents\Visual Studio 2013\Projects\UpdateNeuseInventoryBigRock\UpdateNeuseInventory\obj\Release\UpdateNeuseInventory.pdb

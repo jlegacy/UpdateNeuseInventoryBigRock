@@ -59,5 +59,55 @@ namespace UpdateNeuseInventory.Properties {
                 return ((string)(this["tempDir"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://retriever.bigrocksports.com/imagelib/getimages.php?User=h03110ds&Pwd=nssP" +
+            "@ssword&Action=getqty")]
+        public string url {
+            get {
+                return ((string)(this["url"]));
+            }
+            set {
+                this["url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Users\\\\jlegacy\\\\Documents\\\\Visual Studio 2013\\\\Projects\\\\UpdateNeuseInventory" +
+            "ARS\\\\UpdateNeuseInventory\\\\bin\\\\Release\\\\")]
+        public string dir {
+            get {
+                return ((string)(this["dir"]));
+            }
+            set {
+                this["dir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        public char runARS {
+            get {
+                return ((char)(this["runARS"]));
+            }
+            set {
+                this["runARS"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        public char runBigRock {
+            get {
+                return ((char)(this["runBigRock"]));
+            }
+            set {
+                this["runBigRock"] = value;
+            }
+        }
     }
 }

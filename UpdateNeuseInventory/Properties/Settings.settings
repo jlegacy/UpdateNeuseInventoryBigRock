@@ -19,5 +19,17 @@
     <Setting Name="tempDir" Type="System.String" Scope="Application">
       <Value Profile="(Default)">C:\\temp</Value>
     </Setting>
+    <Setting Name="url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://retriever.bigrocksports.com/imagelib/getimages.php?User=h03110ds&amp;Pwd=nssP@ssword&amp;Action=getqty</Value>
+    </Setting>
+    <Setting Name="dir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\Users\\jlegacy\\Documents\\Visual Studio 2013\\Projects\\UpdateNeuseInventoryARS\\UpdateNeuseInventory\\bin\\Release\\</Value>
+    </Setting>
+    <Setting Name="runARS" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
+    <Setting Name="runBigRock" Type="System.Char" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
